@@ -6,7 +6,6 @@ import os
 import random
 from PIL import Image
 import numpy as np
-import ipdb
 import pickle
 from pycocotools import mask as maskUtils
 import lintel

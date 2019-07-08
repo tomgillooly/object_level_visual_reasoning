@@ -14,6 +14,16 @@ python test.py \
 --root <ROOT-DIR-DATASET> \ # on the above example it is ../data/vlog
 --t <VIDEO-LENGTH>
 ```
+
+
+If you are having problems with relative paths of other modules in this repo, try calling this script from the top level as a module, i.e.
+```
+python -m loader.test \
+--dataset <DATASET-NAME> \ # vlog or epic
+--root <ROOT-DIR-DATASET> \ # on the above example it is ../data/vlog
+--t <VIDEO-LENGTH>
+```
+
 If you have a new PNG file called `img.png` in this directory it means that you are able to iterate over your videos!
 The first time you run the `test.py` file it should take some time because it is looping over the directory to make sure that all the videos are present and retrieve their label and length.
 

@@ -17,6 +17,11 @@ cd preprocessing
 python rescale.py --width 256 --height 256 --fps 30
 ```
 
+If you are having problems with relative paths of other modules in this repo, try calling this script from the top level as a module, i.e.
+```
+python -m preprocessing.rescale --width 256 --height 256 --fps 30
+```
+
 It will create a new directory named `/data/vlog/videos_256x256_30` with the same structure of the initial one.
 You will also get a pickle file called `dict_id_length.pickle` in your new directory, the length of each videos will be saved into this dictionnary (it will be used while training/testing). 
 Feel free to check the `rescale.py` to check other possible arguments (e.g. crf, ffmpeg version, suffix).

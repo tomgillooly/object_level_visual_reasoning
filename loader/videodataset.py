@@ -6,7 +6,6 @@ import os
 import random
 from PIL import Image
 import numpy as np
-import ipdb
 import pickle
 from pycocotools import mask as maskUtils
 import lintel
@@ -66,7 +65,7 @@ class VideoDataset(data.Dataset):
         self.max_len_clip = 3 * self.real_fps  # sec by fps -> num of frames - 3 seconds
 
         # Video and length
-        # self.list_video, self.dict_video_length = self.get_video_and_length()
+        self.list_video, self.dict_video_length = self.get_video_and_length()
 
     def store_dict_video_into_pickle(self, dict_video_label, dataset):
         with open(self.video_label_pickle, 'wb') as file:

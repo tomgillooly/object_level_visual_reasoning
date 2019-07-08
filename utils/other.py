@@ -4,7 +4,6 @@ import torch
 from loader.videodataset import my_collate
 from torch.nn import Module
 import torch.nn as nn
-import ipdb
 import torch
 from utils.meter import *
 import shutil

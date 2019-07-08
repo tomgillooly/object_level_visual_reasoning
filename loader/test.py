@@ -1,21 +1,23 @@
 import argparse
-from loader.vlog import VLOG
-import time
 import sys
-import ipdb
+import time
 import torch
-from torchvision.utils import save_image
-from PIL import Image
-import numpy as np
-import os
-from PIL import Image
 import matplotlib
-
 matplotlib.use('agg')
 import matplotlib.patches as patches
 import matplotlib.pyplot as plt
+import numpy as np
+import os
+
 import utils.vis as vis_utils
+
+from PIL import Image
+from torchvision.utils import save_image
+
+from loader.vlog import VLOG
 from utils.other import *
+from videodataset import VideoDataset
+
 
 dict_dataset = {'vlog': VLOG}
 
@@ -35,10 +37,10 @@ def get_coco_names():
 
 def main(options):
     # Dataset
-    loader = VLOG if options['dataset'] == 'vlog' else None
+    loader = VLOG if options['dataset'] == 'vlog' else VideoDataset
 
     # Loader
-    videodataset = loader(options, dataset='test', mask_size=100)
+    videodataset = loader(options, dataset='test', mask_size=100, video_dir=options['root'])
     print("Size of the dataset = {}".format(len(videodataset)))
 
     # Loop and show

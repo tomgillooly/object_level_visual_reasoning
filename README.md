@@ -24,6 +24,8 @@ Please visit the following [website](https://fabienbaradel.github.io/masks_data/
 * pytorch 0.4.0
 * numpy
 * [lintel](https://github.com/dukebw/lintel) - make sure that you have already installed this library (important for decoding videos on the fly)
+** Note that lintel, allowing with its supporting libraries can be compiled in a local directory
+** If you choose to do so, when calling the scripts in this repo, you must pass the path to libtel and its dependencies by setting the LD_LIBRARY_PATH environment variable
 
 ## Citation
 If you find this paper or our implementation useful for your research or if you use the precomputed masks, please cite our paper.
